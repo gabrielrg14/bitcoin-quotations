@@ -2,9 +2,21 @@ import styled from "styled-components/native"
 
 export const Wrapper = styled.View`
   width: 100%;
-  height: auto;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
   padding: 20px 0;
+`
+
+export const BitcoinImage = styled.Image`
+  width: 64px;
+  height: 64px;
+`
+
+export const Quotation = styled.View`
+  justify-content: center;
+  align-items: center;
 `
 
 export const Price = styled.Text`
@@ -13,7 +25,7 @@ export const Price = styled.Text`
   font-weight: bold;
 `
 
-export const Quotation = styled.Text`
+export const Date = styled.Text`
   color: #fff;
   font-size: 16px;
   font-weight: bold;

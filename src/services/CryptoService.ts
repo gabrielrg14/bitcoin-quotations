@@ -8,4 +8,9 @@ type PeriodProps = {
 const getQuotationsByPeriod = ({ start, end }: PeriodProps) =>
   Api.get(`/historical/close.json?start=${start}&end=${end}`)
 
-export const CryptoService = { getQuotationsByPeriod }
+const getCurrentQuotation = () => Api.get("/currentprice.json")
+
+export const CryptoService = {
+  getQuotationsByPeriod,
+  getCurrentQuotation,
+}

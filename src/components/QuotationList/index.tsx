@@ -11,8 +11,9 @@ type QuotationListProps = {
 export const QuotationList = ({ quotations }: QuotationListProps) => {
   return (
     <S.List
+      showsVerticalScrollIndicator={false}
       data={quotations}
-      renderItem={({ item }) => <QuotationItem quotation={item as Quotation} />}
+      renderItem={({ item, index }) => <QuotationItem key={index} quotation={item as Quotation} />}
     />
   )
 }

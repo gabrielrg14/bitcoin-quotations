@@ -17,8 +17,8 @@ export const PriceView = styled.View`
 `
 
 export const BitcoinImage = styled.Image`
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
 `
 
 export const PriceText = styled.Text`

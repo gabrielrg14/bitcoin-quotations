@@ -1,4 +1,4 @@
 export type Quotation = {
-  date: string
-  price: number
+  date: string | null
+  price: number | null
 }

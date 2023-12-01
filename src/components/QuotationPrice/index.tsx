@@ -1,10 +1,26 @@
+import moment from "moment"
+
+import { Quotation } from "../../@types"
+
 import * as S from "./styles"
 
-export const QuotationPrice = () => {
+type QuotationPrice = {
+  quotation: Quotation
+}
+
+export const QuotationPrice = ({ quotation }: QuotationPrice) => {
   return (
     <S.Wrapper>
-      <S.Price>$ 54423.355</S.Price>
-      <S.Quotation>Last quotation</S.Quotation>
+      <S.BitcoinImage source={require("../../../assets/bitcoin.png")} />
+      <S.Quotation>
+        <S.Price>
+          {quotation.price?.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          })}
+        </S.Price>
+        <S.Date>{moment(quotation.date).format("HH:mm MM/DD/YYYY")}</S.Date>
+      </S.Quotation>
     </S.Wrapper>
   )
 }
