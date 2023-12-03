@@ -24,7 +24,6 @@ export const BitcoinImage = styled.Image`
 export const PriceText = styled.Text`
   color: #fff;
   font-size: 18px;
-  font-weight: bold;
 `
 
 export const DateText = styled.Text`

@@ -19,10 +19,13 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/bitcoin.png",
         "backgroundColor": "#161817"
-      }
+      },
+      "package": "com.gabrielrg14.bitcoinquotations"
     },
-    "web": {
-      "favicon": "./assets/bitcoin.png"
+    "extra": {
+      "eas": {
+        "projectId": "9f081140-0055-4690-bf38-5a8827a97aa4"
+      }
     }
   }
 }

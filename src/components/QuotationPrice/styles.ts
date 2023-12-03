@@ -6,7 +6,7 @@ export const Wrapper = styled.View`
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 20px 0;
+  padding-bottom: 40px;
 `
 
 export const BitcoinImage = styled.Image`

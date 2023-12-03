@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { StatusBar } from "react-native"
 
 import { Quotation } from "../@types"
-import { CryptoService } from "../services/CryptoService"
+import { BitcoinService } from "../services/BitcoinService"
 
 import * as S from "./styles"
 
@@ -11,11 +11,11 @@ import { QuotationPrice, QuotationGraph, QuotationFilters, QuotationList } from 
 const App = () => {
   const yearsFilter = [2022, 2021, 2020, 2019, 2018]
   const [selectedYear, setSelectedYear] = useState(yearsFilter[0])
-  const [currentQuotation, setCurrentQuotation] = useState<Quotation>({ price: null, date: null })
-  const [quotations, setQuotations] = useState<Quotation[]>([])
+  const [currentQuotation, setCurrentQuotation] = useState<Quotation>({ price: 0, date: "" })
+  const [quotations, setQuotations] = useState<Quotation[]>([{ price: 0, date: "" }])
 
   const getCurrentQuotation = async () => {
-    await CryptoService.getCurrentQuotation()
+    await BitcoinService.getCurrentQuotation()
       .then(({ data }) => {
         setCurrentQuotation({
           price: data?.bpi["USD"].rate_float,
@@ -26,7 +26,7 @@ const App = () => {
   }
 
   const getQuotationsByYear = async (year: number) => {
-    await CryptoService.getQuotationsByPeriod({
+    await BitcoinService.getQuotationsByPeriod({
       start: `${year}-01-01`,
       end: `${year}-12-31`,
     })
@@ -55,8 +55,15 @@ const App = () => {
     <S.Wrapper>
       <StatusBar backgroundColor="#18a330" barStyle="light-content" />
       <QuotationPrice quotation={currentQuotation} />
-      <QuotationGraph />
-      <QuotationFilters filters={yearsFilter} setFilter={setSelectedYear} />
+      <QuotationGraph
+        year={selectedYear}
+        quotations={quotations.map((quotation) => quotation.price)}
+      />
+      <QuotationFilters
+        selectedFilter={selectedYear}
+        filters={yearsFilter}
+        setFilter={setSelectedYear}
+      />
       <QuotationList quotations={quotations} />
     </S.Wrapper>
   )

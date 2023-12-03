@@ -10,7 +10,7 @@ const getQuotationsByPeriod = ({ start, end }: PeriodProps) =>
 
 const getCurrentQuotation = () => Api.get("/currentprice.json")
 
-export const CryptoService = {
+export const BitcoinService = {
   getQuotationsByPeriod,
   getCurrentQuotation,
 }

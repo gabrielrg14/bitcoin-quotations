@@ -3,13 +3,18 @@ import { TouchableOpacityProps } from "react-native"
 import * as S from "./styles"
 
 type FilterButtonProps = {
+  selected: boolean
   filter: number
 }
 
-const FilterButton = ({ filter, ...props }: FilterButtonProps & TouchableOpacityProps) => {
+const FilterButton = ({
+  selected,
+  filter,
+  ...props
+}: FilterButtonProps & TouchableOpacityProps) => {
   return (
-    <S.Button {...props}>
-      <S.TextButton>{filter}</S.TextButton>
+    <S.Button selected={selected} {...props}>
+      <S.TextButton selected={selected}>{filter}</S.TextButton>
     </S.Button>
   )
 }
