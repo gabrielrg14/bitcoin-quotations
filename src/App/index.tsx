@@ -14,36 +14,16 @@ const App = () => {
   const [currentQuotation, setCurrentQuotation] = useState<Quotation>({ price: 0, date: "" })
   const [quotations, setQuotations] = useState<Quotation[]>([{ price: 0, date: "" }])
 
-  const getCurrentQuotation = async () => {
-    await BitcoinService.getCurrentQuotation()
-      .then(({ data }) => {
-        setCurrentQuotation({
-          price: data?.bpi["USD"].rate_float,
-          date: data?.time.updatedISO,
-        })
-      })
-      .catch((err) => console.log(err))
-  }
+  const getCurrentQuotation = async () =>
+    setCurrentQuotation(await BitcoinService.getCurrentQuotation())
 
   const getQuotationsByYear = async (year: number) => {
-    await BitcoinService.getQuotationsByPeriod({
-      start: `${year}-01-01`,
-      end: `${year}-12-31`,
-    })
-      .then(({ data }) => {
-        const quotations = data?.bpi
-        const quotationArray: Quotation[] = []
-
-        Object.keys(quotations).map((key) =>
-          quotationArray.push({
-            price: quotations[key],
-            date: key,
-          })
-        )
-
-        setQuotations(quotationArray)
+    setQuotations(
+      await BitcoinService.getQuotationsByPeriod({
+        start: `${year}-01-01`,
+        end: `${year}-12-31`,
       })
-      .catch((err) => console.log(err))
+    )
   }
 
   useEffect(() => {
