@@ -9,5 +9,5 @@
 - [Expo](https://expo.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled Components](https://styled-components.com/)
-- [Jest](hhttps://jestjs.io/)
+- [Jest](https://jestjs.io/)
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
