@@ -12,7 +12,7 @@ const QuotationItem = ({ quotation }: QuotationItemProps) => {
   return (
     <S.Wrapper>
       <S.PriceView>
-        <S.BitcoinImage source={require("../../../../assets/bitcoin.png")} />
+        <S.BitcoinImage testID="bitcoinImage" source={require("../../../../assets/bitcoin.png")} />
         <S.PriceText>
           {quotation.price?.toLocaleString("en-US", {
             style: "currency",

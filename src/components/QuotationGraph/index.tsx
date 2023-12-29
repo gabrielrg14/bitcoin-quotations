@@ -10,7 +10,7 @@ type QuotationGraphProps = {
 
 export const QuotationGraph = ({ year, quotations }: QuotationGraphProps) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper testID="graphView">
       <S.Year>{year}</S.Year>
       <LineChart
         data={{

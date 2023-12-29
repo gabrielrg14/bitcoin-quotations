@@ -13,7 +13,7 @@ const FilterButton = ({
   ...props
 }: FilterButtonProps & TouchableOpacityProps) => {
   return (
-    <S.Button selected={selected} {...props}>
+    <S.Button accessibilityRole="button" selected={selected} {...props}>
       <S.TextButton selected={selected}>{filter}</S.TextButton>
     </S.Button>
   )

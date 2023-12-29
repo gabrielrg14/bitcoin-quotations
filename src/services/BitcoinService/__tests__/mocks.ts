@@ -1,4 +1,4 @@
-export const jan2021Quotations = {
+const jan2021Quotations = {
   bpi: {
     "2021-01-01": 29391.775,
     "2021-01-02": 32198.48,
@@ -34,7 +34,7 @@ export const jan2021Quotations = {
   }
 }
 
-export const currentQuotation = {
+const currentQuotation = {
   time: {
     updatedISO: "2023-12-27T15:29:00+00:00",
   },
@@ -43,4 +43,9 @@ export const currentQuotation = {
       rate_float: 42908.6499
     }
   }
+}
+
+export const mocks = {
+  jan2021Quotations,
+  currentQuotation
 }

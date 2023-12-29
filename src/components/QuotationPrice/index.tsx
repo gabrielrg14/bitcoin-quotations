@@ -11,7 +11,7 @@ type QuotationPrice = {
 export const QuotationPrice = ({ quotation }: QuotationPrice) => {
   return (
     <S.Wrapper>
-      <S.BitcoinImage source={require("../../../assets/bitcoin.png")} />
+      <S.BitcoinImage testID="bitcoinImage" source={require("../../../assets/bitcoin.png")} />
       <S.Quotation>
         <S.Price>
           {quotation.price?.toLocaleString("en-US", {
