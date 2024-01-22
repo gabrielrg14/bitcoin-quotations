@@ -6,13 +6,10 @@ const quotationsMock = [42908.6499, 42540.2458, 42283.0887]
 
 describe("<QuotationGraph />", () => {
   it("should render the graph view and be visible", () => {
-    const { getByTestId, debug } = render(
-      <QuotationGraph year={2022} quotations={quotationsMock} />
-    )
-    debug()
+    const { getByTestId } = render(<QuotationGraph year={2022} quotations={quotationsMock} />)
 
-    expect(getByTestId("graphView")).toBeOnTheScreen()
-    expect(getByTestId("graphView")).toBeVisible()
+    expect(getByTestId(/graphView/i)).toBeOnTheScreen()
+    expect(getByTestId(/graphView/i)).toBeVisible()
   })
 
   it("should render the year in the graph", () => {

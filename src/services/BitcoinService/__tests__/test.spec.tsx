@@ -1,6 +1,7 @@
 import { Api } from "../../../providers"
 import { mocks } from "./mocks"
-import { BitcoinService } from ".."
+
+import { BitcoinService } from "../"
 
 describe("BitcoinService", () => {
   describe("getQuotationsByPeriod", () => {
@@ -9,16 +10,22 @@ describe("BitcoinService", () => {
     })
 
     it("should return the quotations with price and date in the period passed", async () => {
-      const quotations = await BitcoinService.getQuotationsByPeriod({ start: "2021-01-01", end: "2021-01-31" })
+      const quotations = await BitcoinService.getQuotationsByPeriod({
+        start: "2021-01-01",
+        end: "2021-01-31",
+      })
 
       expect(quotations[0]).toHaveProperty("price", 29391.775)
       expect(quotations[0]).toHaveProperty("date", "2021-01-01")
     })
 
     it("should return the correct number of quotations in the period passed", async () => {
-      const quotations = await BitcoinService.getQuotationsByPeriod({ start: "2021-01-01", end: "2021-01-31" })
+      const quotations = await BitcoinService.getQuotationsByPeriod({
+        start: "2021-01-01",
+        end: "2021-01-31",
+      })
 
-      expect(quotations.length).toEqual(31)
+      expect(quotations).toHaveLength(31)
     })
   })
 
