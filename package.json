@@ -1,7 +1,26 @@
 {
   "name": "bitcoin-quotations",
   "version": "1.0.0",
+  "private": true,
   "main": "index.ts",
+  "description": "Mobile application to check the current price of Bitcoin and price history over the years.",
+  "author": "Gabriel Rapucci Gonzalez <gabrielrapuccigonzalez14@hotmail.com> (https://gabrielrapucci.com.br)",
+  "homepage": "https://github.com/gabrielrg14/bitcoin-quotations#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielrg14/bitcoin-quotations"
+  },
+  "bugs": {
+    "url": "https://github.com/gabrielrg14/bitcoin-quotations/issues"
+  },
+  "keywords": [
+    "react-native",
+    "bitcoin",
+    "quotations",
+    "bitcoin-quotations",
+    "front-end",
+    "portfolio"
+  ],
   "scripts": {
     "start": "expo start",
     "test": "jest",
@@ -41,6 +60,5 @@
     "prettier": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.2"
-  },
-  "private": true
+  }
 }

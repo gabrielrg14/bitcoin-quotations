@@ -11,3 +11,4 @@
 - [Styled Components](https://styled-components.com/)
 - [Jest](https://jestjs.io/)
 - [React Native Testing Library](https://callstack.github.io/react-native-testing-library/)
+- [GitHub Actions](https://github.com/features/actions/)
