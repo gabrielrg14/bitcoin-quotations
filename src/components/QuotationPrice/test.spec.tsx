@@ -20,6 +20,6 @@ describe("<QuotationPrice />", () => {
   it("should render the quotation date formatted correctly", () => {
     const { getByText } = render(<QuotationPrice quotation={quotationMock} />)
 
-    expect(getByText("12/27/2023 12:29 (UTC)")).toBeOnTheScreen()
+    expect(getByText("12/27/2023 15:29 (UTC)")).toBeOnTheScreen()
   })
 })

@@ -19,7 +19,7 @@ export const QuotationPrice = ({ quotation }: QuotationPrice) => {
             currency: "USD",
           })}
         </S.Price>
-        <S.Date>{moment(quotation.date).format("MM/DD/YYYY HH:mm")} (UTC)</S.Date>
+        <S.Date>{moment.utc(quotation.date).format("MM/DD/YYYY HH:mm")} (UTC)</S.Date>
       </S.Quotation>
     </S.Wrapper>
   )

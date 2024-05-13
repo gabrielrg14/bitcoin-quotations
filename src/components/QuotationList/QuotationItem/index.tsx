@@ -20,7 +20,7 @@ const QuotationItem = ({ quotation }: QuotationItemProps) => {
           })}
         </S.PriceText>
       </S.PriceView>
-      <S.DateText>{moment(quotation.date).format("MM/DD/YYYY")}</S.DateText>
+      <S.DateText>{moment.utc(quotation.date).format("MM/DD/YYYY")}</S.DateText>
     </S.Wrapper>
   )
 }
