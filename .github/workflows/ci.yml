@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install dependencies 🛠️
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run lint 🔍
         run: npm run lint
@@ -35,7 +35,7 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies 🛠️
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Run unit tests 🧪
         run: npm test
