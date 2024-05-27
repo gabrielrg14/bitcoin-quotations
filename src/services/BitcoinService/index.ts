@@ -25,7 +25,7 @@ const getCurrentQuotation = async () => {
   const { data } = await Api.get("/currentprice.json")
   return {
     price: data?.bpi.USD.rate_float,
-    date: data?.time.updatedISO
+    date: data?.time.updatedISO,
   }
 }
 

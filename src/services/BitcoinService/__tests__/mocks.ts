@@ -30,8 +30,8 @@ const jan2021Quotations = {
     "2021-01-28": 33420.045,
     "2021-01-29": 34264.01,
     "2021-01-30": 34324.2717,
-    "2021-01-31": 33129.7433
-  }
+    "2021-01-31": 33129.7433,
+  },
 }
 
 const currentQuotation = {
@@ -40,12 +40,12 @@ const currentQuotation = {
   },
   bpi: {
     USD: {
-      rate_float: 42908.6499
-    }
-  }
+      rate_float: 42908.6499,
+    },
+  },
 }
 
 export const mocks = {
   jan2021Quotations,
-  currentQuotation
+  currentQuotation,
 }

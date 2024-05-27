@@ -9,7 +9,20 @@ on:
       - master
 
 jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies 🛠️
+        run: npm ci
+
+      - name: Run lint 🔍
+        run: npm run lint
+
   unit-tests:
+    needs: lint
     runs-on: ubuntu-latest
 
     steps:
