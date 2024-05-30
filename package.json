@@ -21,6 +21,7 @@
     "front-end",
     "portfolio"
   ],
+  "license": "MIT",
   "scripts": {
     "start": "expo start",
     "lint": "eslint src",
